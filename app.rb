@@ -27,8 +27,10 @@ class Main < Sinatra::Base
     # The calendars to search for availability
     calendars = {
       "Coast" => ENV['COAST'],
+      "Meadow" => ENV['MEADOW'],
       "Vista" => ENV['VISTA'],
-      "Meadow" => ENV['MEADOW']
+      "Hotel 253" => ENV['HOTEL_253'],
+      "Hotel 254" => ENV['HOTEL_254']
     }
 
     # If we received a `minutes` parameter for time, use that number, otherwise default to 30 minutes.
@@ -82,6 +84,8 @@ class Main < Sinatra::Base
     if !names.empty?
       if names.length == 1
         msg = "The #{names.join(", ")} room is available for #{duration.to_s} minutes."
+      elsif names.length == 2
+        msg = "The #{names.join(" and ")} rooms are available for #{duration.to_s} minutes."
       else
         rooms = [names[0...-1].join(", "), names.last].join(", and ")
         msg = "The #{rooms} rooms are available for #{duration.to_s} minutes."
