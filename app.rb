@@ -34,7 +34,7 @@ class Main < Sinatra::Base
     }
 
     # If we received a `minutes` parameter for time, use that number, otherwise default to 30 minutes.
-    if params['text']
+    if params['text'] && params['text'].chomp.to_i > 0
       duration = params['text'].chomp.to_i
     else
       duration = 30
