@@ -87,7 +87,7 @@ class Main < Sinatra::Base
         msg = "The #{rooms} rooms are available for #{duration.to_s} minutes."
       end
     else
-      msg = "Bummer. No rooms are available for the #{duration.to_s} minutes."
+      msg = "Bummer. No rooms are available for #{duration.to_s} minutes."
     end
 
     # Return the response to this request.
