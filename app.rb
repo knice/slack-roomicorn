@@ -13,7 +13,6 @@ class Main < Sinatra::Base
 
   helpers do
     def protected!
-      # @token = params['token'].chomp.to_s
       return if params['token'] && params['token'].chomp.to_s == ENV['SLACK_TOKEN']
       halt 401, "Not authorized\n"
     end
