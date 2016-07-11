@@ -21,7 +21,7 @@ class Main < Sinatra::Base
   get '/' do
 
     protected!
-    # The response to this request will be sent as JSON.
+    # TODO: Make the response to this request JSON
     # content_type :json
 
     # The calendars to search for availability
