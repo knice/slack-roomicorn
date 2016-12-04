@@ -41,17 +41,20 @@ class Comment < Sinatra::Base
       # Comments
       'Field5' => Sanitize.fragment(params['Field5']),
       # Show your name
-      'Field107' => Sanitize.fragment(params['Field107']),
+      'Field107' => 'Yes',
       # Approved?
       'Field208' => 'Pending'
     })
     if result['Success'] == 0
-      return result['ErrorText']
+      # return result['ErrorText']
       # return params.to_json
+
     end
 
-    content_type :json
-    return result.to_json
+    # content_type :json
+    # return result.to_json
+
+    redirect "http://reports.news.ucsc.edu/breakthrough/congratulations/"
 
   end
 
