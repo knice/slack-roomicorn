@@ -47,14 +47,12 @@ class Comment < Sinatra::Base
     })
     if result['Success'] == 0
       # return result['ErrorText']
-      # return params.to_json
-
+      return "An error occurred. Sorry".to_json
     end
 
     # content_type :json
-    # return result.to_json
-
-    redirect "http://reports.news.ucsc.edu/breakthrough/congratulations/"
+    return "Thank you for your comment".to_json
+    # redirect "http://reports.news.ucsc.edu/breakthrough/congratulations/"
 
   end
 
