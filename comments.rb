@@ -18,7 +18,7 @@ class Comment < Sinatra::Base
   # Collect all of the comments from Wufoo
   get '/' do
     content_type :json
-    result = form.entries(filters: [['Field208', 'Is_equal_to', 'Yes']]).to_json
+    result = form.entries(filters: [['Field208', 'Is_equal_to', 'Yes']], :limit => 100).to_json
     return result
   end
 
