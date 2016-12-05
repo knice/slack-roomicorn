@@ -15,10 +15,10 @@ class Comment < Sinatra::Base
     headers 'Access-Control-Allow-Origin' => '*', 'Access-Control-Allow-Methods' => ['OPTIONS', 'GET', 'POST']  
   end
 
-  # Collect all of the comments from Wufoo
+  # Collect all of the comments from Wufoo, starting with the **public** entries after #84
   get '/' do
     content_type :json
-    result = form.entries(filters: [['Field208', 'Is_equal_to', 'Yes']], :limit => 100).to_json
+    result = form.entries(filters: [['Field208', 'Is_equal_to', 'Yes']], :limit => 100, :pageStart => 73).to_json
     return result
   end
 
