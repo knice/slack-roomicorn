@@ -4,9 +4,9 @@ require 'wuparty'
 
 class Comment < Sinatra::Base
 
-  ACCOUNT = 'ucsc'
-  API_KEY = 'SDH4-QZO8-8IEB-35MB'
-  FORM_ID = 'qr116fd1tet8ir'
+  ACCOUNT = ENV['WUFOO_ACCOUNT']
+  API_KEY = ENV['WUFOO_FORM_KEY']
+  FORM_ID = ENV['WUFOO_FORM_ID']
 
   wufoo = WuParty.new(ACCOUNT, API_KEY)
   form = wufoo.form(FORM_ID)
