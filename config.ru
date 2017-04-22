@@ -3,5 +3,5 @@ require 'sinatra/base'
 require './app'
 require './comments'
 
-map('/') { run Main }
+map('/') { run ROOM::Main }
 map('/comments') { run Comment }
