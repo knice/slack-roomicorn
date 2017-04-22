@@ -27,9 +27,9 @@ module ROOM
 
       # The calendars to search for availability
       calendars = {
-        "SVC-2204" => "ucsc.edu_7376637265733231@resource.calendar.google.com",
-        "SVC-2211" => "ucsc.edu_7376637265733232@resource.calendar.google.com",
-        "SVC-2269" => "ucsc.edu_7376637265733233@resource.calendar.google.com"
+        "2204" => "ucsc.edu_7376637265733231@resource.calendar.google.com",
+        "2211" => "ucsc.edu_7376637265733232@resource.calendar.google.com",
+        "2269" => "ucsc.edu_7376637265733233@resource.calendar.google.com"
       }
 
       # If we received a `minutes` parameter for time, use that number, otherwise default to 30 minutes.
